@@ -60,5 +60,8 @@ def create_film(request):
         file = FileSystemStorage().save('app1/image/' + image_file.name, image_file)
         file_url = FileSystemStorage().url(file)
         Kino.objects.create(name = name, graduationYear = graduationYear, genre = genre, linkToView = linkToView, type = type, image = file_url)
+
+def start(request):
+    return redirect('kino/')
     
 # Create your views here.

@@ -22,10 +22,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('kino/',kino),
+    path('kino/',kino,name='kino'),
     path('film/',film),
     path('serial/',serial),
     path('multfilm/',multfilm),
-    path('multserial/',multserial)
+    path('multserial/',multserial),
+    path('',start),
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
